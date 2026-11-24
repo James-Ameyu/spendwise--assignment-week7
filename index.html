@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise | Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>SpendWise</h1>
+        <p>Manage your money. Track your expenses. Save better.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>Set Your Budget</h2>
+            <form id="budgetForm">
+                <input type="number" id="budgetInput"
+                    placeholder="Enter your budget in KSh"
+                    min="0.01" step="0.01" required>
+                <button type="submit">Set Budget</button>
+            </form>
+        </section>
+
+        <section class="dashboard">
+            <div class="summary">
+                <h3>Total Budget</h3>
+                <p id="budgetOutput">KSh 0.00</p>
+            </div>
+
+            <div class="summary">
+                <h3>Total Expenses</h3>
+                <p id="expensesOutput">KSh 0.00</p>
+            </div>
+
+            <div class="summary">
+                <h3>Balance</h3>
+                <p id="balanceOutput">KSh 0.00</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Add an Expense</h2>
+
+            <form id="expenseForm">
+                <input type="text" id="expenseName"
+                    placeholder="Expense name" required>
+
+                <input type="number" id="expenseAmount"
+                    placeholder="Amount in KSh"
+                    min="0.01" step="0.01" required>
+
+                <select id="expenseCategory" required>
+                    <option value="">Select category</option>
+                    <option>Food</option>
+                    <option>Transport</option>
+                    <option>Rent</option>
+                    <option>Entertainment</option>
+                    <option>Other</option>
+                </select>
+
+                <button type="submit">Add Expense</button>
+            </form>
+
+            <p id="message" aria-live="polite"></p>
+        </section>
+
+        <section class="card">
+            <h2>Your Expenses</h2>
+            <div id="expenseList">
+                No expenses added yet.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Budget Status</h2>
+            <p id="budgetStatus">Please set your budget.</p>
+            <button id="clearButton" class="clear-button" type="button">
+                Clear All Expenses
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>SpendWise Budget Tracker | Built with HTML, CSS and JavaScript</p>
+    </footer>
+
+</body>
+</html>
